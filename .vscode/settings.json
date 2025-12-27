@@ -1,7 +1,5 @@
 {
-  "cSpell.words": [
-    "mysqld"
-  ],
+  "cSpell.words": ["mysqld", "innodb"],
   "editor.tabSize": 2,
   "editor.indentSize": "tabSize",
   "markdownlint.config": {
