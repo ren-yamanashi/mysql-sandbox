@@ -1,0 +1,10 @@
+{
+  "cSpell.words": [
+    "mysqld"
+  ],
+  "editor.tabSize": 2,
+  "editor.indentSize": "tabSize",
+  "markdownlint.config": {
+    "MD034": false
+  }
+}

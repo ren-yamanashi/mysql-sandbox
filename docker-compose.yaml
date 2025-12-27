@@ -1,0 +1,11 @@
+services:
+  mysql-sandbox:
+    image: mysql:8.0.44-bookworm
+    platform: linux/amd64
+    container_name: mysql-sandbox
+    env_file:
+      - .env
+    volumes:
+      - ./.mysql_data:/var/lib/mysql
+    ports:
+        - 3306:3306
