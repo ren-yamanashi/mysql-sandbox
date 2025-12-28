@@ -32,3 +32,9 @@ GRANT CREATE, DROP, REFERENCES, INDEX, ALTER ON `${db_name}`.* TO `${username}`@
 -- 監視権限
 GRANT SELECT, PROCESS ON *.* TO `${username}`@'%';
 ```
+
+### パスワード更新
+
+```sql
+SET PASSWORD FOR `${username}` = '${new_password}';
+```
