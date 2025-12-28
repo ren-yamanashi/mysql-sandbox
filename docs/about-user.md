@@ -34,6 +34,9 @@ GRANT SELECT, PROCESS ON *.* TO `${username}`@'%';
 
 -- 権限削除 (スキーマ操作権限の削除)
 -- REVOKE CREATE, DROP, REFERENCES, INDEX, ALTER ON `${db_name}`.* FROM `${username}`@'%';
+
+-- ユーザー削除
+-- DROP USER `${username}`;
 ```
 
 ### パスワード更新
