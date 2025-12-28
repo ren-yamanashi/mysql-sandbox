@@ -31,10 +31,15 @@ GRANT CREATE, DROP, REFERENCES, INDEX, ALTER ON `${db_name}`.* TO `${username}`@
 
 -- 監視権限
 GRANT SELECT, PROCESS ON *.* TO `${username}`@'%';
+
+-- 権限削除 (スキーマ操作権限の削除)
+-- REVOKE CREATE, DROP, REFERENCES, INDEX, ALTER ON `${db_name}`.* FROM `${username}`@'%';
 ```
 
 ### パスワード更新
 
 ```sql
-SET PASSWORD FOR `${username}` = '${new_password}';
+SET PASSWORD FOR `${username}` = PASSWORD('${new_password}');
+-- OR
+ALTER USER `${username}` IDENTIFIED BY '${new_password}';
 ```
