@@ -17,3 +17,18 @@
         - 逆に OFF だと接続要求の都度逆引きが発生するため接続ごとのオーバーヘッドが大きくなる
           - 逆引き用の DNS サーバーがダウンした場合、すべての接続要求が DNS タイムアウトを待ってから IP アドレスのみで評価されることになる
         - そのため、パフォーマンスや可用性の観点から `skip_name_resolve` を ON にし、接続元ホストは IP アドレス (またはネットワークアドレス) 形式で指定するのが定石
+
+### ユーザーの作成例
+
+```sql
+CREATE USER `${username}`@'%' IDENTIFIED BY '${password}';
+
+-- 読み書き権限
+GRANT SELECT, INSERT, UPDATE, DELETE ON `${db_name}`.* TO `${username}`@'%';
+
+-- スキーマ操作権限
+GRANT CREATE, DROP, REFERENCES, INDEX, ALTER ON `${db_name}`.* TO `${username}`@'%';
+
+-- 監視権限
+GRANT SELECT, PROCESS ON *.* TO `${username}`@'%';
+```
